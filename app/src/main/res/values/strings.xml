@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DrinkWater</string>
+    <string name="increment_counter">increment counter</string>
+</resources>
