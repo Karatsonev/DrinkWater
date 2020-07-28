@@ -1,11 +1,11 @@
 package com.example.drinkwater;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 
-public class MainActivityPresenter implements MainActivityContract.Presenter, SharedPreferences.OnSharedPreferenceChangeListener {
+public class MainActivityPresenter implements MainActivityContract.Presenter,
+        SharedPreferences.OnSharedPreferenceChangeListener {
 
     private MainActivityContract.View mView;
     private Context mContext;
