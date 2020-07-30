@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 
+import com.example.drinkwater.data.PreferencesUtils;
+import com.example.drinkwater.reminder.ReminderIntentService;
+import com.example.drinkwater.reminder.ReminderTask;
+
 public class MainActivityPresenter implements MainActivityContract.Presenter,
         SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -18,7 +22,9 @@ public class MainActivityPresenter implements MainActivityContract.Presenter,
     @Override
     public void onViewCreated() {
         mView.initViews();
+        mView.setPresenter(this);
         mView.initCounter();
+        this.registerPrefsListener();
     }
 
     @Override
@@ -43,6 +49,11 @@ public class MainActivityPresenter implements MainActivityContract.Presenter,
     public void unregisterPrefsListener() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         prefs.unregisterOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public MainActivityContract.View getView() {
+        return this.mView;
     }
 
     @Override

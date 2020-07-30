@@ -1,10 +1,15 @@
-package com.example.drinkwater;
+package com.example.drinkwater.data;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 
+import javax.inject.Inject;
+
 public class PreferencesUtils  {
+
+    @Inject
+    public PreferencesUtils() { }
 
     public static final String KEY_WATER_COUNT = "water-count";
     private static final int DEFAULT_COUNT = 0;
@@ -24,6 +29,10 @@ public class PreferencesUtils  {
     synchronized public static void incrementWaterCount(Context context) {
         int count =  getWaterCount(context);
         setWaterCount(context, ++count);
+    }
+
+    public String testUtils() {
+        return "It Works!";
     }
 
 }

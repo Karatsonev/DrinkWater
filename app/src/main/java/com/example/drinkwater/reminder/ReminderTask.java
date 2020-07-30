@@ -1,6 +1,8 @@
-package com.example.drinkwater;
+package com.example.drinkwater.reminder;
 
 import android.content.Context;
+
+import com.example.drinkwater.data.PreferencesUtils;
 
 public class ReminderTask {
 
